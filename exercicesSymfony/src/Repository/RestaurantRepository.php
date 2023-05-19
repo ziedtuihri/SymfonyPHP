@@ -39,6 +39,17 @@ class RestaurantRepository extends ServiceEntityRepository
         }
     }
 
+    public function findLastTenElements()
+    {
+        return $this->createQueryBuilder('r')
+        ->orderBy('r.createdAt', 'DESC')
+        ->setMaxResults(2)
+        ->getQuery()
+        ->getResult()
+        ;
+    }
+    
+
 //    /**
 //     * @return Restaurant[] Returns an array of Restaurant objects
 //     */
