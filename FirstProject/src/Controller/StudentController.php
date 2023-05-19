@@ -24,7 +24,7 @@ class StudentController extends AbstractController
     #[Route('/afficheStudent', name: 'afficheStudent')]
  public function afficheStudent(StudentRepository $r): Response
  {
-    //utiliser la fonction findAl()
+    //utiliser la fonction findAll()
      $students=$r->findAll();
      return $this->render('student/afficheS.html.twig', [
          's' => $students,

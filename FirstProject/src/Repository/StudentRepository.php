@@ -44,7 +44,7 @@ class StudentRepository extends ServiceEntityRepository
         $query = $entityManager->createQuery('SELECT p FROM App\entity\Student p ORDER BY p.email ASC ');
         return $query->getResult();
     }
-
+/*
     public function searchByAVG($min, $max){
         $entityManager = $this->getEntityManager();
         $query = $entityManager->createQuery('SELECT s FROM App\entity\Student s WHERE s.moyenne BETWEEN min AND max ');
@@ -53,6 +53,9 @@ class StudentRepository extends ServiceEntityRepository
 
         return $query->getResult();
     }
+
+    */
+    
 //    /**
 //     * @return Student[] Returns an array of Student objects
 //     */
