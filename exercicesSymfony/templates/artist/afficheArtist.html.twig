@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des artist</h1>
+    <table border=2>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for artist in artists %}
+                <tr>
+                    <td>{{ artist.id }}</td>
+                    <td>{{ artist.name }}</td>
+                    <td> <a href="{{ path('update_artist',{'id': artist.id}) }}"> Update </a></td>
+                    <td> <a href="{{ path('detail_artist',{'id': artist.id}) }}"> Details </a></td>
+                    <td> <a href="{{ path('delete_artist',{'id': artist.id}) }}"> Delete </a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

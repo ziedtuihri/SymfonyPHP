@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add oeuvre {% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                    <button class="btn btn-success">Créer un oeuvre</button>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+    {% set flashMessages = app.flashes('success') %}
+
+    {% if flashMessages is not empty %}
+        <div class="alert alert-success">
+            {{ flashMessages[0] }}
+        </div>
+    {% endif %}
+{% endblock %}
